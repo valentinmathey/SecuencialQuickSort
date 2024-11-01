@@ -2,7 +2,7 @@
 
 ## 📚 Proyecto de Computación Paralela: QuickSort
 
-Este proyecto implementa el algoritmo de ordenamiento QuickSort en C, destacando su eficiencia y estrategia de división y conquista.
+Este proyecto implementa el algoritmo de ordenamiento QuickSort en C, utilizando un enfoque eficiente de división y conquista para ordenar grandes conjuntos de datos. Incluye mediciones de tiempo de ejecución para evaluar su rendimiento.
 
 ## 🧩 Algoritmo QuickSort
 
