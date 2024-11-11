@@ -50,6 +50,10 @@ gcc -o quicksort2 SecuencialQuickSortDebug.c
 ./quicksort2
 ```
 
+## 📚 Lectura de Valores desde un Archivo de Texto
+
+Además de generar los datos de manera aleatoria, también se puede leer los valores desde un archivo de texto llamado `1000numeros.txt`. Asegúrate de tener este archivo en el mismo directorio que el código fuente.
+
 ## 📊 Medición de Rendimiento
 
 El programa mide el tiempo de ejecución en:
