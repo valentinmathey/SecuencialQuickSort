@@ -1,40 +1,47 @@
-# 🚀 Algoritmo QuickSort Secuencial en C
+# 🚀 Algoritmo QuickSort Secuencial con Análisis de Números Primos en C
 
-## 📚 Proyecto de Computación Paralela: QuickSort
+## 📚 Proyecto de Computación Paralela: QuickSort y Criba de Eratóstenes
 
-Este proyecto implementa el algoritmo de ordenamiento QuickSort en C, utilizando un enfoque eficiente de división y conquista para ordenar grandes conjuntos de datos. Incluye mediciones de tiempo de ejecución para evaluar su rendimiento.
+Este proyecto implementa un algoritmo **QuickSort** altamente eficiente en C junto con la detección de números primos utilizando la **Criba de Eratóstenes**. La implementación está diseñada para el procesamiento y análisis de datos de alto rendimiento, con mediciones precisas del tiempo de ejecución.
 
-## 🧩 Algoritmo QuickSort
+## 🔍 Características Principales
 
-#### Estrategia de Pivote
+- Implementación de QuickSort con estrategia de partición de doble índice
+- Criba de Eratóstenes para detección eficiente de números primos
+- Mediciones de tiempo de ejecución de alta precisión usando `clock_gettime()`
+- Soporte para arreglos de hasta 100 millones de elementos
+- Asignación dinámica de memoria para grandes conjuntos de datos
+- Generación de números aleatorios con rangos configurables
 
-El algoritmo QuickSort utiliza una estrategia de selección de pivote única:
+## 🧮 Algoritmos Principales
 
-- Selecciona el último elemento como pivote
-- Utiliza dos índices (`leftIndex` y `rightIndex`) para particionar el arreglo
-- Reordena los elementos de manera que los menores queden a la izquierda y los mayores a la derecha
+### Implementación de QuickSort
+- Utiliza el último elemento como pivote
+- Estrategia de partición de doble índice para intercambio eficiente de elementos
+- Complejidad Temporal: O(n log n) caso promedio
+- Complejidad Espacial: O(log n) debido a la recursión
 
-#### 🔍 Características Técnicas
+### Criba de Eratóstenes
+- Identifica eficientemente números primos hasta 1,000,000
+- Complejidad Temporal: O(n log log n)
+- Complejidad Espacial: O(n) usando optimización de arreglo booleano
+  
+## 🧮 Criba de Eratóstenes
 
-- **Complejidad Temporal**: O(n log n) en el caso promedio
-- **Complejidad Espacial**: O(log n) debido a la recursividad
-- **Método de Partición**: Doble índice con intercambio de elementos
+El proyecto incluye una funcionalidad para contar números primos en un conjunto grande de datos. 
 
 ## 💻 Funciones Principales
 
-#### `partition()`
-
-- Selecciona el pivote (último elemento)
-- Reordena los elementos alrededor del pivote
-- Retorna la posición final del pivote
-
-#### `quickSort()`
-
-- Función recursiva que divide el arreglo
-- Ordena subarray izquierdo y derecho
-- Condición de parada: subarrays con 0 o 1 elemento
+```c
+void quickSort(int array[], int low, int high)
+int partition(int array[], int low, int high)
+void cribaEratostenes(bool *esPrimo, int n)
+int contarPrimos(int array[], int size, bool *esPrimo)
+```
 
 ## 🛠️ Compilación y Ejecución
+
+El programa requiere la biblioteca matemática (`-lm`) y la biblioteca de tiempo real (`-lrt`) para una compilación correcta. Aquí están los comandos de compilación recomendados:
 
 ```bash
 # Compilar versión normal
@@ -43,43 +50,55 @@ gcc -o quicksort1 SecuencialQuickSort.c
 # Compilar versión de depuración
 gcc -o quicksort2 SecuencialQuickSortDebug.c
 
+# Compilar versión con contador de primos
+gcc -o quicksort3 SecuencialQuickSortPrimeNumbers.c -lm -lrt
+
 # Ejecutar versión normal
 ./quicksort1
 
 # Ejecutar versión de depuración
 ./quicksort2
+
+# Ejecutar versión con contador de primos
+./quicksort3
 ```
 
-## 📚 Lectura de Valores desde un Archivo de Texto
+## 📚 Entrada de Datos
 
-Además de generar los datos de manera aleatoria, también se puede leer los valores desde un archivo de texto llamado `1000numeros.txt`. Asegúrate de tener este archivo en el mismo directorio que el código fuente.
+1. Generación Aleatoria:
+- Hasta 100,000,000 elementos generados dinámicamente.
+- Los números están en el rango [0, 999,999].
 
-## 📊 Medición de Rendimiento
-
-El programa mide el tiempo de ejecución en:
-- Segundos
-- Milisegundos
-- Nanosegundos
-
-Utilizando `clock_gettime()` para alta precisión.
-
-## 🔬 Análisis de Complejidad
-
-- **Mejor Caso**: O(n log n) - Particiones equilibradas
-- **Peor Caso**: O(n²) - Arreglo ya ordenado o inversamente ordenado
-- **Caso Promedio**: O(n log n)
+2. Archivo de Texto:
+- Lee valores desde un archivo llamado 1000numeros.txt (opcional).
+- Debe estar en el mismo directorio que el código fuente.
 
 ## 🧠 Conceptos Clave
 
 1. **Pivote**: Elemento de referencia para particionar
 2. **Partición**: Dividir el arreglo en subarrays
 3. **Recursividad**: Aplicar QuickSort a subarrays
+4. **Criba**: Algoritmo eficiente para encontrar números primos.
+5. **Semillas Aleatorias**: Aseguran la diversidad en la generación de datos.
+6. **Medición de Tiempo**: Precisión con `clock_gettime()`.
 
+## 🔬 Análisis de Complejidad
+
+### QuickSort:
+- Mejor Caso: O(n log n) con particiones equilibradas.
+- Peor Caso: O(n²) con particiones desbalanceadas.
+- Caso Promedio: O(n log n).
+
+### Criba de Eratóstenes:
+- Complejidad Temporal: O(n log log n).
+- Complejidad Espacial: O(n) debido al uso de arreglos booleanos.
+  
 ## 🛡️ Manejo de Errores
 
 - Verificación de límites del arreglo
 - Control de condiciones de recursividad
 - Prevención de desbordamiento de pila
+- Validación de mediciones de tiempo de ejecución
 
 ## 💻 Tecnologías
 
